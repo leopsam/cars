@@ -1,4 +1,5 @@
 import prisma from "../config/database.js";
+import { Car } from "../protocols/cars.js";
 
 async function getCars() {
   return prisma.cars.findMany();
@@ -22,14 +23,9 @@ async function getCarWithLicensePlate(licensePlate: string) {
   return data;
 }
 
-async function createCar(model: string, licensePlate: string, year: number, color: string) {
+async function createCar(car: Car) {
   return prisma.cars.create({
-    data: {
-      'model': model,
-      'licensePlate': licensePlate,
-      'year': year,
-      'color': color
-    }
+    data: car
   })
 }
 

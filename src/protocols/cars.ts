@@ -8,4 +8,3 @@ export type CarEntity = {
   
   export type Car = Omit<CarEntity, "id">;
   
-  //export type CarUpdate = Omit<CarEntity, "title" | "platform" | "genre">;

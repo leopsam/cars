@@ -1,5 +1,4 @@
 import httpStatus from "http-status";
-
 import { Request, Response } from "express";
 import carService from "../services/carService.js";
 
